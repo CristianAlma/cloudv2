@@ -1,8 +1,8 @@
 const { Model } = require('objection');
 
-class Customer extends Model {
+class Empleado extends Model {
     static get tableName() {
-        return 'customer';
+        return 'empleados';
     }
 
     static get jsonSchema() {
@@ -24,21 +24,21 @@ class Customer extends Model {
         };
     }
 
-    static async getCustomers() {
-        return await Customer.query();
+    static async getEmpleados() {
+        return await Empleado.query();
     }
 
     static async insert(data) {
-        return await Customer.query().insert(data);
+        return await Empleado.query().insert(data);
     }
 
     static async update(data, id) {
-        return await Customer.query().patchAndFetchById(id, data);
+        return await Empleado.query().patchAndFetchById(id, data);
     }
 
     static async delete(id) {
-        return await Customer.query().deleteById(id);
+        return await Empleado.query().deleteById(id);
     }
 }
 
-module.exports = Customer;
+module.exports = Empleado;

@@ -6,18 +6,9 @@
 module.exports = {
 
   development: {
-    client: 'mysql',
+    client: 'sqlite2',
     connection: {
-      host:'127.0.0.1',
-      user: 'root',
-      password: '',
-      database: 'cloud'
-    },
-    migrations: {
-      directory: './migrations'
-    },
-    seeds: {
-      directory: './seeds'
+      filename: './dev.sqlite3'
     }
   },
 
